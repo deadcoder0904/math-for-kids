@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded',function() {
 	let voices = [];
 	const dropDownMenu = document.querySelector('[name=dropDownMenu]');
 	const countTill = document.querySelector('[name=count]');
-	const marbles = document.querySelector('.marbles');
+	const marbles = document.querySelector('#marbles');
+	const words = document.querySelector('#words');
 	let i = 0;
 	let interval;
 
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded',function() {
 	function tick() {
 		if(i <= +countTill.value) {
 			marbles.innerHTML = i;
+			words.innerHTML = numberToWords.toWords(i);
 			msg.text = i++;
 			speakUp();
 		}

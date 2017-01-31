@@ -6,7 +6,8 @@
 
 html {
     height: 100vh;
-	background: linear-gradient(90deg, rgb(237, 191, 22), rgb(20, 155, 133));
+	background: url(kid.jpg) no-repeat center center fixed;
+  	background-size: cover;
 	user-select: none;
 	overflow: hidden;
 }
@@ -15,15 +16,20 @@ html {
 	text-align: center;
 	letter-spacing: -0.07em;
 	font-weight: bolder;
-	font-size: 5em;
+	font-size: 6em;
 	font-family: cursive;
-	color: #FADA45;
+	color: #5b3afd;
 	margin-top: 10px;
 	padding-bottom: 10px;
 }
 
+#tagline {
+	text-shadow: 0.07em 0.07em 0.1em rebeccapurple;
+}
+
 h3 {
-	font-size: 2em;
+	font-family: Tahoma;
+	font-size: 3em;
 	color: #BE1234;
 }
 
@@ -44,8 +50,9 @@ select {
 }
 
 #count_till {
-	font-size: 2em;
-	color: #11AAA2;
+	font-family: Tahoma;
+	font-size: 3em;
+	color: #FADA45;
 }
 
 option {
@@ -54,6 +61,7 @@ option {
 
 input[type=number] {
 	width: 40%;
+	border-radius: 20em;
 	padding: 1em;
 	margin: 2em;
     border: none;
@@ -66,13 +74,18 @@ input[type=number]:focus {
 }
 
 #display_numbers {
-  	content: '&#x2665';
+    content: '&#x2665';
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 4em;
 }
 
-.marbles {
+#marbles, #words {
+	color: aquamarine;
+	text-shadow: 0.1em 0.2em 0.03em #333;
+	text-transform: capitalize;
 	font-size: 6em;
 	font-family: 'Verdana';
 	font-weight: bolder;
