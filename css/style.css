@@ -93,6 +93,18 @@ input[type=number]:focus {
 	border-radius: 50em;
 }
 
+#quiz {
+	text-align: center;
+}
+
+#quiz > a {
+	outline: none;
+	text-decoration: none;
+	font-size: 4em;
+	color: #d0591c;
+	font-weight: bolder;
+}
+
 @keyframes beat{
 	to { transform: scale(1.4); }
 }

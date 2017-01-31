@@ -4,7 +4,7 @@
 
 # Screenshot
 
-![math-for-kids](http://imgur.com/lHCzub0.png)
+![math-for-kids](http://imgur.com/Wt8r23E.png)
 
 ## License
 
