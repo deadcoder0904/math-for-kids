@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded',function() {
-	const msg = new SpeechSynthesisUtterance();
-	let voices = [];
-	const dropDownMenu = document.querySelector('[name=dropDownMenu]');
-	const countTill = document.querySelector('[name=count]');
-	const marbles = document.querySelector('#marbles');
-	const words = document.querySelector('#words');
-	let i = 0;
-	let interval;
+	var msg = new SpeechSynthesisUtterance();
+	var voices = [];
+	var dropDownMenu = document.querySelector('[name=dropDownMenu]');
+	var countTill = document.querySelector('[name=count]');
+	var marbles = document.querySelector('#marbles');
+	var words = document.querySelector('#words');
+	var i = 0;
+	var interval;
 
 	msg.text = marbles.innerHTML;
 
@@ -20,11 +20,14 @@ document.addEventListener('DOMContentLoaded',function() {
 	}
 
 	function setVoices() {
-		msg.voice = voices.find(voice => voice.name === this.value);
+		console.log("setVoices");
+		msg.voice = voices.find(function (voice) {
+			return voice.name === this.value;
+		}.bind(this));
 	}
 
 	function inputChange(e) {
-		const val = e.target.value;
+		var val = e.target.value;
 		clearInterval(interval);
 		i = 0;
 		interval = setInterval(tick, 2000);
@@ -39,10 +42,9 @@ document.addEventListener('DOMContentLoaded',function() {
 		}
 	}
 
-	countTill.addEventListener('change', inputChange);
+	countTill.addEventListener('change keydown paste input', inputChange);
 
 	interval = setInterval(tick, 2000);
-
 	speechSynthesis.addEventListener('voiceschanged', populateVoices);
 	dropDownMenu.addEventListener('change', setVoices);
 

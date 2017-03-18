@@ -100,8 +100,14 @@ input[type=number]:focus {
 #quiz > a {
 	outline: none;
 	text-decoration: none;
-	font-size: 4em;
-	color: #d0591c;
+	border: 0px;
+	border-bottom: 5px;
+	border-style: solid;
+	border-color: #FF1F26;
+	font-size: 3em;
+	padding: 0.4em;
+	background-color: rgba(0,0,0,0.7);
+	color: #bada65;
 	font-weight: bolder;
 }
 
