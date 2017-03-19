@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded',function() {
 	}
 
 	function setVoices() {
-		console.log("setVoices");
 		msg.voice = voices.find(function (voice) {
 			return voice.name === this.value;
 		}.bind(this));
@@ -42,7 +41,9 @@ document.addEventListener('DOMContentLoaded',function() {
 		}
 	}
 
-	countTill.addEventListener('change keydown paste input', inputChange);
+	['change', 'keydown', 'paste', 'input'].forEach(function(event) {
+		countTill.addEventListener(event, inputChange);
+	});
 
 	interval = setInterval(tick, 2000);
 	speechSynthesis.addEventListener('voiceschanged', populateVoices);
